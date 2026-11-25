@@ -1,0 +1,86 @@
+import assert from "node:assert/strict";
+import { initialState, newSaved, validateState } from "../src/domain.ts";
+import { advanceStudy, checkStudy, contextPrompt, defaultVocabSettings, eligibleWords, expectedAnswer, parseWordLines, scheduleVocabulary, startStudy, studyChoices, vocabWords } from "../src/vocabulary-study.ts";
+const now = 1792728000000;
+let state = initialState();
+assert.ok(eligibleWords(state, null, "learn", now).length > 0, "Global learning includes unsaved collection words");
+const collection = state.collections[0];
+const word = vocabWords(state).find(w => collection.wordIds.includes(w.id))!;
+assert.deepEqual(parseWordLines(" habit\r\nHabit\n\nlove "), ["Habit", "love"]);
+assert.throws(() => parseWordLines(Array.from({ length: 101 }, (_, i) => "word" + i).join("\n")), /100/);
+assert.throws(() => parseWordLines("a".repeat(101)));
+assert.equal(contextPrompt({ ...word, term: "a+b", example: "We use a+b here." }), "We use ______ here.");
+assert.equal(contextPrompt({ ...word, term: "a", example: "daily" }), "");
+state.vocabulary = { settings: defaultVocabSettings() };
+state.vocabulary.settings.fresh.limit = 1;
+state.vocabulary.session = startStudy(state, collection.id, "learn", now, [word.id]);
+const id = state.vocabulary.session.id;
+assert.equal(state.vocabulary.session.tasks[0].mode, "copy");
+assert.equal(state.vocabulary.session.tasks.length, 6);
+assert.equal(validateState(JSON.parse(JSON.stringify(state))).vocabulary?.session?.id, id);
+let madeMistake = false;
+for (let safety = 0; safety < 30; safety++) {
+  const session = state.vocabulary!.session!;
+  if (session.index >= session.tasks.length) break;
+  const task = session.tasks[session.index];
+  const options = studyChoices(state, task, session.index);
+  assert.equal(new Set(options).size, options.length);
+  assert.ok(options.includes(expectedAnswer(task, word)));
+  const answer = !madeMistake && task.mode === "meaning" ? "wrong" : expectedAnswer(task, word);
+  if (answer === "wrong") madeMistake = true;
+  const before = session.index;
+  state = checkStudy(state, id, before, answer);
+  const checked = state;
+  assert.equal(checkStudy(state, id, before, answer), checked, "Duplicate Check must be a no-op");
+  state = validateState(JSON.parse(JSON.stringify(state))); // killed app in feedback / resume
+  state = advanceStudy(state, id, before, false, now);
+  assert.equal(advanceStudy(state, id, before, false, now), state, "Double Continue must not consume next question");
+  validateState(state);
+}
+assert.equal(state.vocabulary!.session!.index, state.vocabulary!.session!.tasks.length);
+assert.equal(state.vocabulary!.session!.committed.length, 1);
+assert.equal(state.events.filter(e => e.kind === "review").length, 1);
+assert.equal(state.saved[word.id].repetitions, 1, "Multistage learning schedules once per word");
+assert.ok(state.vocabulary!.session!.tasks.some(t => t.retry), "Wrong answers must return");
+state.saved[word.id] = { ...state.saved[word.id], due: now - 1 };
+state.vocabulary!.session = startStudy(state, collection.id, "review", now);
+const review = state.vocabulary!.session!;
+state = advanceStudy(state, review.id, 0, true, now);
+assert.equal(state.saved[word.id].repetitions, 1);
+assert.equal(state.saved[word.id].due, now + 7200000);
+assert.equal(state.vocabulary!.session!.skipped.length, 1);
+assert.ok(!state.vocabulary!.session!.tasks.slice(1).some(t => t.wordId === word.id));
+assert.equal(checkStudy(state, id, 0, word.term), state, "Old session cannot write into new session");
+const malformed = structuredClone(state);
+malformed.vocabulary!.settings.review.meaning = -1;
+assert.throws(() => validateState(malformed));
+const deleted = structuredClone(state);
+deleted.vocabulary!.session!.tasks[0].wordId = "missing";
+assert.throws(() => validateState(deleted));
+const maxId = "w".repeat(100);
+const long = initialState();
+long.customWords.push({ ...word, id: maxId });
+long.saved[maxId] = newSaved(maxId, collection.id, now);
+long.vocabulary = { settings: defaultVocabSettings(), session: startStudy(long, null, "review", now) };
+assert.equal(validateState(advanceStudy(long, long.vocabulary.session!.id, 0, true, now)).events.at(-1)?.target, maxId);
+console.log("PASS: vocabulary parsing, settings validation, all question transitions, wrong-answer retry, resume, stale/double actions, exactly-once schedule and skip");
+
+for (const [current, hours] of [[0,2],[1,24],[2,48],[3,72],[4,120],[5,192],[10,2136],[11,2136]]) { const c = scheduleVocabulary({ ...newSaved("habit", collection.id, now), repetitions: current }, true, now); assert.equal(c.due, now + hours * 3600000); }
+assert.equal(scheduleVocabulary({ ...state.saved[word.id], repetitions: 8 }, false, now).repetitions, 7);
+assert.equal(scheduleVocabulary(newSaved("habit", collection.id, now), false, now).repetitions, 0, "A failed new word is not learned");
+let failures = initialState();
+failures.saved[word.id] = newSaved(word.id, collection.id, now);
+failures.vocabulary = { settings: defaultVocabSettings(), session: startStudy(failures, collection.id, "review", now) };
+const failedSession = failures.vocabulary.session!.id;
+for (let n = 0; n < 30 && failures.vocabulary!.session!.index < failures.vocabulary!.session!.tasks.length; n++) {
+  const i = failures.vocabulary!.session!.index;
+  failures = advanceStudy(checkStudy(failures, failedSession, i, "wrong"), failedSession, i, false, now);
+}
+assert.equal(failures.vocabulary!.session!.index, failures.vocabulary!.session!.tasks.length, "Repeated errors must terminate instead of looping forever");
+assert.equal(failures.saved[word.id].repetitions, 0);
+assert.equal(failures.events.filter(e => e.kind === "review").length, 1);
+const global = initialState();
+global.customWords.push({ ...word, id: "global-custom" });
+global.collections[1].wordIds.push("global-custom");
+global.vocabulary = { settings: defaultVocabSettings(), session: startStudy(global, null, "learn", now, ["global-custom"]) };
+assert.equal(advanceStudy(global, global.vocabulary.session!.id, 0, true, now).saved["global-custom"].collectionId, global.collections[1].id, "Global learning keeps the word in its original collection");

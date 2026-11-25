@@ -1,0 +1,617 @@
+{
+  "reviewed_on": "2026-10-25",
+  "review_method": "English/Vietnamese pairs individually read for meaning, grammar, usefulness and audience suitability. Rejected misleading translations, near duplicates, unsafe and fictional assertions. Levels are teaching estimates.",
+  "approved_sentences": [
+    14031860,
+    14031850,
+    13893835,
+    13838789,
+    13808585,
+    13711433,
+    13614938,
+    13500944,
+    13493646,
+    11450632,
+    11369691,
+    11333154,
+    13898274,
+    13745213,
+    13711646,
+    12217930,
+    9670732,
+    9001335,
+    6713335,
+    6530643,
+    6033221,
+    4109716,
+    2549333,
+    13921511,
+    13842615,
+    13675487,
+    13654332,
+    13602894,
+    11325195,
+    10005736,
+    8040698,
+    5829245,
+    5160394,
+    4949941,
+    4017429,
+    3738105,
+    3342834,
+    13860241,
+    13484336,
+    13480495,
+    11450749,
+    11438778,
+    11295249,
+    11063900,
+    10967335,
+    9113040,
+    8388698,
+    7784008,
+    14081909,
+    14028767,
+    13944694,
+    13929975,
+    13891091,
+    13886675,
+    13855499,
+    13510605,
+    13155597,
+    13089773,
+    12508871,
+    12316493,
+    11432656,
+    13892573,
+    13859980,
+    13839751,
+    13839750,
+    13489889,
+    12993308,
+    12496413,
+    12301191,
+    12082832,
+    12075220,
+    12035627,
+    11829369,
+    13899537,
+    13436330,
+    13249472,
+    13236898,
+    13221673,
+    13106932,
+    12999823,
+    12995844,
+    12985076,
+    12978078,
+    12884473,
+    12877241,
+    12867862,
+    13236893,
+    13106931,
+    13022675,
+    13013039,
+    13006639,
+    13000231,
+    12999807,
+    12984004,
+    12983845,
+    12982242,
+    12978080,
+    12978064,
+    12978032,
+    12975041,
+    12926756,
+    12910176,
+    12901582,
+    12901546,
+    12896788,
+    12877235
+  ],
+  "approved_audio": {
+    "12867862": 1247809,
+    "12877241": 1249495,
+    "12884473": 1285570,
+    "12978078": 1249500,
+    "12985076": 1247865,
+    "12995844": 1247889,
+    "12999823": 1249501,
+    "13106932": 1285637,
+    "13221673": 1285641,
+    "13236898": 1285646,
+    "13249472": 1285648,
+    "13436330": 1285675,
+    "13484336": 1285680,
+    "13500944": 1285681,
+    "13899537": 1285701,
+    "13236893": 1285645,
+    "13106931": 1285636,
+    "13022675": 1285630,
+    "13013039": 1285612,
+    "13006639": 1285607,
+    "13000231": 1247898,
+    "12999807": 1247895,
+    "12984004": 1285586,
+    "12983845": 1247864,
+    "12982242": 1285582,
+    "12978080": 1247861,
+    "12978064": 1247859,
+    "12978032": 1285580,
+    "12975041": 1247856,
+    "12926756": 1247832,
+    "12910176": 1247823,
+    "12901582": 1247821,
+    "12901546": 1249497,
+    "12896788": 1249496,
+    "12877235": 1247811
+  },
+  "translations": {
+    "12867862": "Công việc của cô ấy lặp đi lặp lại.",
+    "12877241": "Tôi thích biển.",
+    "12884473": "Có sữa không?",
+    "12978078": "Chiếc xe này to.",
+    "12985076": "Lúc đó bạn không có ở nhà.",
+    "12995844": "Chiếc máy đã ngừng hoạt động.",
+    "12999823": "Tôi thường xuyên ở đây.",
+    "13106932": "Bộ phim này thú vị.",
+    "13221673": "Bạn là một người lãnh đạo.",
+    "13236898": "Chúng tôi đang ăn súp.",
+    "13249472": "Các bạn uống trà.",
+    "13436330": "Họ có cần tiền không?",
+    "13899537": "Phòng của anh ấy sạch sẽ.",
+    "13236893": "Anh ấy hoàn toàn không nhìn thấy.",
+    "13106931": "Bộ phim thú vị.",
+    "13022675": "Đừng nói xin lỗi.",
+    "13013039": "Hãy giữ chuyện đó cho riêng mình!",
+    "13006639": "Trái cây bị thối rồi.",
+    "13000231": "Con mèo của tôi bị ốm.",
+    "12999807": "Tom đang ở một mình.",
+    "12984004": "Tôi thích album này.",
+    "12983845": "Bạn đã ở cùng tôi.",
+    "12982242": "Bạn tôi là người Đức.",
+    "12978080": "Anh ấy ăn cơm trắng.",
+    "12978064": "Anh ấy nâng cánh tay lên.",
+    "12978032": "Họ nhìn thấy một bông hoa.",
+    "12975041": "Anh ấy đã có đủ mọi thứ chưa?",
+    "12926756": "Bạn biết chơi bi-a không?",
+    "12910176": "Anh ấy mặc quần bò.",
+    "12901582": "Cái ở đây là gì vậy?",
+    "12901546": "Cô ấy không ở nhà.",
+    "12896788": "Đó là một con thằn lằn.",
+    "12877235": "Anh ấy đeo kính râm."
+  },
+  "articles": [
+    {
+      "id": "open-solar-system",
+      "title": "Our place in the solar system",
+      "subtitle": "Khám phá ngôi nhà chung trong không gian",
+      "level": "A2",
+      "topic": "Science",
+      "kind": "Science",
+      "scene": "sky",
+      "minutes": 3,
+      "sourceUrl": "https://science.nasa.gov/solar-system/planets/",
+      "sourceTitle": "NASA: Planets",
+      "provider": "NASA",
+      "sourceAuthor": "NASA Science",
+      "sourceLicense": "NASA factual reference; EnglishFlow adaptation CC BY 4.0",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "paragraphs": [
+        {
+          "en": "Earth is one of eight planets in our solar system. The planets move around the Sun, a star that gives our world light and energy. The Sun is much larger than any planet.",
+          "vi": "Trái Đất là một trong tám hành tinh trong hệ Mặt Trời. Các hành tinh chuyển động quanh Mặt Trời, một ngôi sao mang lại ánh sáng và năng lượng cho thế giới của chúng ta. Mặt Trời lớn hơn rất nhiều so với bất kỳ hành tinh nào."
+        },
+        {
+          "en": "The four inner planets have rocky surfaces. Farther from the Sun, the giant planets are very different from Earth. Some have beautiful rings, and many have moons of their own.",
+          "vi": "Bốn hành tinh phía trong có bề mặt đá. Ở xa Mặt Trời hơn, các hành tinh khổng lồ rất khác với Trái Đất. Một số có những vành đai đẹp, và nhiều hành tinh có các mặt trăng riêng."
+        },
+        {
+          "en": "Scientists use telescopes and spacecraft to study these distant places. Every discovery helps us ask better questions. Learning about other worlds also helps us appreciate the home we share.",
+          "vi": "Các nhà khoa học dùng kính thiên văn và tàu vũ trụ để nghiên cứu những nơi xa xôi này. Mỗi khám phá giúp chúng ta đặt ra những câu hỏi tốt hơn. Tìm hiểu những thế giới khác cũng giúp chúng ta trân trọng ngôi nhà chung của mình."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "How many planets are in our solar system?",
+          "options": [
+            "Eight",
+            "Four",
+            "Ten",
+            "Twelve"
+          ],
+          "answer": "Eight",
+          "explanation": "Đoạn đầu nêu Trái Đất là một trong tám hành tinh."
+        },
+        {
+          "prompt": "What is the Sun?",
+          "options": [
+            "A star",
+            "A moon",
+            "A spacecraft",
+            "A rocky planet"
+          ],
+          "answer": "A star",
+          "explanation": "Mặt Trời là ngôi sao cung cấp ánh sáng và năng lượng."
+        },
+        {
+          "prompt": "How do scientists study distant worlds?",
+          "options": [
+            "With telescopes and spacecraft",
+            "Only by walking",
+            "With library cards",
+            "By counting trees"
+          ],
+          "answer": "With telescopes and spacecraft",
+          "explanation": "Đoạn cuối nhắc đến kính thiên văn và tàu vũ trụ."
+        }
+      ]
+    },
+    {
+      "id": "open-moon",
+      "title": "A changing Moon, a familiar neighbour",
+      "subtitle": "Vì sao hình dạng Mặt Trăng có vẻ thay đổi?",
+      "level": "B1",
+      "topic": "Science",
+      "kind": "Science",
+      "scene": "sky",
+      "minutes": 3,
+      "sourceUrl": "https://science.nasa.gov/moon/facts/",
+      "sourceTitle": "NASA: Moon facts",
+      "provider": "NASA",
+      "sourceAuthor": "NASA Science",
+      "sourceLicense": "NASA factual reference; EnglishFlow adaptation CC BY 4.0",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "paragraphs": [
+        {
+          "en": "The Moon is Earth's natural satellite. It does not make its own light. What we see is sunlight reflected from its surface. Although the Moon looks bright at night, its surface is mostly dark rock and dust.",
+          "vi": "Mặt Trăng là vệ tinh tự nhiên của Trái Đất. Nó không tự tạo ra ánh sáng. Ánh sáng chúng ta nhìn thấy là ánh Mặt Trời phản chiếu từ bề mặt của nó. Dù trông sáng vào ban đêm, bề mặt Mặt Trăng chủ yếu là đá và bụi tối màu."
+        },
+        {
+          "en": "As the Moon travels around Earth, we see different amounts of its sunlit half. These changes are called phases. A full moon and a thin crescent are different views of the same object, not changes in its actual shape.",
+          "vi": "Khi Mặt Trăng chuyển động quanh Trái Đất, chúng ta nhìn thấy những phần khác nhau của nửa được chiếu sáng. Những thay đổi này được gọi là các pha. Trăng tròn và trăng lưỡi liềm là những góc nhìn khác nhau của cùng một thiên thể, không phải sự thay đổi hình dạng thật của nó."
+        },
+        {
+          "en": "You can keep a simple Moon diary. Draw what you see at a similar time each evening and record the date. After several weeks, compare your drawings and look for a pattern.",
+          "vi": "Bạn có thể lập một cuốn nhật ký Mặt Trăng đơn giản. Hãy vẽ lại những gì nhìn thấy vào thời điểm tương tự mỗi tối và ghi ngày tháng. Sau vài tuần, so sánh các bức vẽ và tìm quy luật."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Where does moonlight come from?",
+          "options": [
+            "Reflected sunlight",
+            "Fire inside the Moon",
+            "Electric lamps",
+            "Light from Earth alone"
+          ],
+          "answer": "Reflected sunlight",
+          "explanation": "Mặt Trăng phản chiếu ánh Mặt Trời, không tự phát sáng."
+        },
+        {
+          "prompt": "What changes during the Moon's phases?",
+          "options": [
+            "Our view of its sunlit half",
+            "Its actual shape",
+            "The number of its rocks",
+            "Its identity"
+          ],
+          "answer": "Our view of its sunlit half",
+          "explanation": "Chúng ta nhìn thấy những phần khác nhau của nửa được chiếu sáng."
+        },
+        {
+          "prompt": "Why make a Moon diary?",
+          "options": [
+            "To notice a pattern over time",
+            "To change its orbit",
+            "To make sunlight",
+            "To measure a library"
+          ],
+          "answer": "To notice a pattern over time",
+          "explanation": "Việc so sánh các bản vẽ giúp người quan sát nhận ra quy luật."
+        }
+      ]
+    },
+    {
+      "id": "open-library",
+      "title": "More than a room full of books",
+      "subtitle": "Thư viện và việc học suốt đời",
+      "level": "B1",
+      "topic": "Culture",
+      "kind": "Culture",
+      "scene": "library",
+      "minutes": 3,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Library",
+      "fetchUrl": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts%7Crevisions&exintro=1&explaintext=1&rvprop=ids%7Ctimestamp&titles=Library&format=json",
+      "sourceTitle": "Library",
+      "provider": "Wikimedia",
+      "sourceAuthor": "Wikipedia contributors",
+      "sourceLicense": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "paragraphs": [
+        {
+          "en": "A library gives a community access to books and information. Some materials can be borrowed, while others are kept for use inside the building. Modern collections may also include films, recordings and digital resources.",
+          "vi": "Thư viện giúp cộng đồng tiếp cận sách và thông tin. Một số tài liệu có thể được mượn về, trong khi những tài liệu khác chỉ được sử dụng tại chỗ. Bộ sưu tập hiện đại còn có thể gồm phim, bản ghi âm và tài nguyên số."
+        },
+        {
+          "en": "Librarians do more than put books on shelves. They help people search for reliable information and discover useful resources. Many libraries provide quiet study areas, computers and spaces for group activities.",
+          "vi": "Thủ thư không chỉ xếp sách lên giá. Họ giúp mọi người tìm thông tin đáng tin cậy và khám phá những tài nguyên hữu ích. Nhiều thư viện có khu học yên tĩnh, máy tính và không gian cho hoạt động nhóm."
+        },
+        {
+          "en": "Before your next visit, write down one question you want to explore. Ask a librarian where to begin. You may leave with a book, a new skill or an idea you had never considered.",
+          "vi": "Trước lần đến thư viện tiếp theo, hãy ghi lại một câu hỏi bạn muốn tìm hiểu. Hỏi thủ thư nên bắt đầu từ đâu. Khi ra về, bạn có thể mang theo một cuốn sách, một kỹ năng mới hoặc một ý tưởng chưa từng nghĩ tới."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Which materials may modern libraries offer?",
+          "options": [
+            "Books and digital resources",
+            "Only old newspapers",
+            "Only furniture",
+            "Only handwritten letters"
+          ],
+          "answer": "Books and digital resources",
+          "explanation": "Bài đọc liệt kê sách, phim, bản ghi âm và tài nguyên số."
+        },
+        {
+          "prompt": "How can a librarian help?",
+          "options": [
+            "By guiding an information search",
+            "By choosing your career for you",
+            "By selling every book",
+            "By cancelling group activities"
+          ],
+          "answer": "By guiding an information search",
+          "explanation": "Thủ thư hướng dẫn tìm thông tin đáng tin cậy."
+        },
+        {
+          "prompt": "What does the writer suggest before a visit?",
+          "options": [
+            "Prepare a question",
+            "Buy a computer",
+            "Avoid asking for help",
+            "Read every book"
+          ],
+          "answer": "Prepare a question",
+          "explanation": "Đoạn cuối khuyên ghi lại một câu hỏi muốn khám phá."
+        }
+      ]
+    },
+    {
+      "id": "open-bicycle",
+      "title": "Two wheels, many possibilities",
+      "subtitle": "Một phương tiện quen thuộc nhìn từ góc độ mới",
+      "level": "A2",
+      "topic": "Travel",
+      "kind": "Travel",
+      "scene": "travel",
+      "minutes": 3,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bicycle",
+      "fetchUrl": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts%7Crevisions&exintro=1&explaintext=1&rvprop=ids%7Ctimestamp&titles=Bicycle&format=json",
+      "sourceTitle": "Bicycle",
+      "provider": "Wikimedia",
+      "sourceAuthor": "Wikipedia contributors",
+      "sourceLicense": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "paragraphs": [
+        {
+          "en": "A bicycle usually has two wheels attached to a frame. A rider turns the pedals to move it forward and uses the handlebars to choose a direction. This simple design has become an important form of transport around the world.",
+          "vi": "Xe đạp thường có hai bánh gắn vào một khung xe. Người lái đạp bàn đạp để xe tiến về phía trước và dùng tay lái để chọn hướng. Thiết kế đơn giản này đã trở thành một phương tiện giao thông quan trọng trên khắp thế giới."
+        },
+        {
+          "en": "People cycle for different reasons. Some ride to school or work. Others enjoy racing, exploring new places or spending time outdoors. Different types of bicycles are built for different journeys.",
+          "vi": "Mọi người đi xe đạp vì nhiều lý do. Một số đạp xe đến trường hoặc nơi làm việc. Những người khác thích đua xe, khám phá địa điểm mới hoặc ở ngoài trời. Những loại xe đạp khác nhau được thiết kế cho những hành trình khác nhau."
+        },
+        {
+          "en": "When planning a journey, think about the route as well as the distance. A quiet street may be more comfortable than a busy road. Choosing a suitable route can make an ordinary trip more enjoyable.",
+          "vi": "Khi lên kế hoạch cho chuyến đi, hãy nghĩ đến tuyến đường bên cạnh quãng đường. Một con phố yên tĩnh có thể dễ chịu hơn đường đông đúc. Chọn tuyến đường phù hợp có thể khiến một chuyến đi bình thường trở nên thú vị hơn."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What does the rider use to choose a direction?",
+          "options": [
+            "The handlebars",
+            "The book shelf",
+            "The seat colour",
+            "The number plate"
+          ],
+          "answer": "The handlebars",
+          "explanation": "Tay lái được dùng để điều hướng."
+        },
+        {
+          "prompt": "Why do people cycle?",
+          "options": [
+            "For transport and enjoyment",
+            "Only to race",
+            "Only at school",
+            "Only indoors"
+          ],
+          "answer": "For transport and enjoyment",
+          "explanation": "Bài đọc nêu cả việc đi học/đi làm và sở thích ngoài trời."
+        },
+        {
+          "prompt": "What should a journey plan consider?",
+          "options": [
+            "The route and the distance",
+            "Only the weather yesterday",
+            "Only the bicycle colour",
+            "The library closing time"
+          ],
+          "answer": "The route and the distance",
+          "explanation": "Đoạn cuối nhắc cân nhắc tuyến đường cùng với khoảng cách."
+        }
+      ]
+    },
+    {
+      "id": "open-recycling",
+      "title": "Giving materials another life",
+      "subtitle": "Hiểu đúng về tái chế trong cuộc sống",
+      "level": "B1",
+      "topic": "Environment",
+      "kind": "Environment",
+      "scene": "garden",
+      "minutes": 3,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Recycling",
+      "fetchUrl": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts%7Crevisions&exintro=1&explaintext=1&rvprop=ids%7Ctimestamp&titles=Recycling&format=json",
+      "sourceTitle": "Recycling",
+      "provider": "Wikimedia",
+      "sourceAuthor": "Wikipedia contributors",
+      "sourceLicense": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "paragraphs": [
+        {
+          "en": "Recycling turns waste materials into materials that can be used again. Paper, metal, glass and some plastics can enter recycling systems. However, the items accepted by one local programme may differ from those accepted by another.",
+          "vi": "Tái chế biến vật liệu thải thành vật liệu có thể được sử dụng lại. Giấy, kim loại, thủy tinh và một số loại nhựa có thể đi vào hệ thống tái chế. Tuy nhiên, những vật được một chương trình địa phương chấp nhận có thể khác với chương trình khác."
+        },
+        {
+          "en": "Collection is only the first step. Materials must be sorted and processed before they become useful inputs for new products. Putting the wrong items in a recycling bin can make this process harder.",
+          "vi": "Thu gom chỉ là bước đầu tiên. Vật liệu cần được phân loại và xử lý trước khi trở thành nguyên liệu hữu ích cho sản phẩm mới. Bỏ sai vật vào thùng tái chế có thể làm quá trình này khó khăn hơn."
+        },
+        {
+          "en": "A practical starting point is to check your local collection instructions. Reducing unnecessary purchases and reusing suitable items are useful habits too. Recycling is one part of thinking carefully about the materials we use.",
+          "vi": "Một điểm khởi đầu thiết thực là kiểm tra hướng dẫn thu gom tại địa phương. Giảm mua sắm không cần thiết và tái sử dụng vật dụng phù hợp cũng là những thói quen hữu ích. Tái chế là một phần của việc cân nhắc kỹ những vật liệu chúng ta sử dụng."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What does recycling do?",
+          "options": [
+            "Makes waste materials useful again",
+            "Makes every material disappear",
+            "Replaces all collection rules",
+            "Prevents all purchases"
+          ],
+          "answer": "Makes waste materials useful again",
+          "explanation": "Tái chế tạo cơ hội sử dụng lại vật liệu."
+        },
+        {
+          "prompt": "Are all local collection rules identical?",
+          "options": [
+            "No, they can differ",
+            "Yes, everywhere",
+            "Only for glass",
+            "The article does not mention rules"
+          ],
+          "answer": "No, they can differ",
+          "explanation": "Đoạn đầu nêu sự khác nhau giữa các chương trình địa phương."
+        },
+        {
+          "prompt": "What other habits does the text suggest?",
+          "options": [
+            "Reducing purchases and reusing items",
+            "Buying more packaging",
+            "Mixing all waste",
+            "Ignoring local instructions"
+          ],
+          "answer": "Reducing purchases and reusing items",
+          "explanation": "Đoạn cuối gợi ý giảm mua không cần thiết và tái sử dụng."
+        }
+      ]
+    },
+    {
+      "id": "open-volunteering",
+      "title": "A little time for a shared purpose",
+      "subtitle": "Học tiếng Anh qua câu chuyện đóng góp cho cộng đồng",
+      "level": "B2",
+      "topic": "Culture",
+      "kind": "Culture",
+      "scene": "garden",
+      "minutes": 3,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Volunteering",
+      "fetchUrl": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts%7Crevisions&exintro=1&explaintext=1&rvprop=ids%7Ctimestamp&titles=Volunteering&format=json",
+      "sourceTitle": "Volunteering",
+      "provider": "Wikimedia",
+      "sourceAuthor": "Wikipedia contributors",
+      "sourceLicense": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "paragraphs": [
+        {
+          "en": "Volunteering means giving time and effort to help others or support a cause without expecting payment for the work. Activities vary widely, from helping at a community event to sharing a specialist skill with an organisation.",
+          "vi": "Hoạt động tình nguyện là dành thời gian và công sức để giúp người khác hoặc hỗ trợ một mục tiêu mà không mong được trả công cho công việc đó. Hoạt động rất đa dạng, từ hỗ trợ một sự kiện cộng đồng đến chia sẻ kỹ năng chuyên môn với một tổ chức."
+        },
+        {
+          "en": "Useful volunteering begins with listening. A group may need reliable help with an ordinary task more than it needs a dramatic new idea. Clear expectations help both the organisation and the volunteer understand their responsibilities.",
+          "vi": "Hoạt động tình nguyện hữu ích bắt đầu từ việc lắng nghe. Một nhóm có thể cần sự hỗ trợ đáng tin cậy cho một công việc bình thường hơn là một ý tưởng mới gây chú ý. Kỳ vọng rõ ràng giúp cả tổ chức và tình nguyện viên hiểu trách nhiệm của mình."
+        },
+        {
+          "en": "Before agreeing to a role, ask about the time required, any necessary training and the support available. Choose a commitment you can keep. A small, regular contribution can be more useful than an ambitious promise that is quickly forgotten.",
+          "vi": "Trước khi nhận một vai trò, hãy hỏi về thời gian cần dành ra, việc đào tạo cần thiết và sự hỗ trợ sẵn có. Chọn một cam kết bạn có thể giữ được. Một đóng góp nhỏ nhưng đều đặn có thể hữu ích hơn một lời hứa lớn nhanh chóng bị lãng quên."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is central to the definition of volunteering here?",
+          "options": [
+            "Helping without expecting payment",
+            "Working only overseas",
+            "Avoiding all training",
+            "Making dramatic promises"
+          ],
+          "answer": "Helping without expecting payment",
+          "explanation": "Định nghĩa nhấn mạnh việc giúp đỡ mà không mong được trả công."
+        },
+        {
+          "prompt": "Why are clear expectations useful?",
+          "options": [
+            "They clarify responsibilities",
+            "They remove the need to listen",
+            "They guarantee payment",
+            "They shorten every activity"
+          ],
+          "answer": "They clarify responsibilities",
+          "explanation": "Kỳ vọng rõ ràng giúp hai phía hiểu trách nhiệm."
+        },
+        {
+          "prompt": "Which contribution does the author favour?",
+          "options": [
+            "One that is realistic and regular",
+            "One that is impressive but impossible",
+            "One without any discussion",
+            "One that is immediately forgotten"
+          ],
+          "answer": "One that is realistic and regular",
+          "explanation": "Tác giả đề cao cam kết nhỏ, thực tế và đều đặn."
+        }
+      ]
+    }
+  ],
+  "audio_durations": {
+    "tatoeba-13500944": 2.54,
+    "tatoeba-13484336": 2.19,
+    "tatoeba-13899537": 2.18,
+    "tatoeba-13436330": 2.45,
+    "tatoeba-13249472": 2.59,
+    "tatoeba-13236898": 2.44,
+    "tatoeba-13221673": 2.35,
+    "tatoeba-13106932": 2.41,
+    "tatoeba-12999823": 1.829,
+    "tatoeba-12995844": 2.011,
+    "tatoeba-12985076": 1.881,
+    "tatoeba-12978078": 1.907,
+    "tatoeba-12884473": 2.41,
+    "tatoeba-12877241": 1.776,
+    "tatoeba-12867862": 2.09,
+    "tatoeba-13236893": 2.44,
+    "tatoeba-13106931": 2.25,
+    "tatoeba-13022675": 2.52,
+    "tatoeba-13013039": 2.65,
+    "tatoeba-13006639": 2.46,
+    "tatoeba-13000231": 1.869,
+    "tatoeba-12999807": 2.156,
+    "tatoeba-12984004": 2.51,
+    "tatoeba-12983845": 1.973,
+    "tatoeba-12982242": 2.67,
+    "tatoeba-12978080": 2.13,
+    "tatoeba-12978064": 2.052,
+    "tatoeba-12978032": 2.45,
+    "tatoeba-12975041": 1.973,
+    "tatoeba-12926756": 1.895,
+    "tatoeba-12910176": 2.026,
+    "tatoeba-12901582": 1.764,
+    "tatoeba-12901546": 1.738,
+    "tatoeba-12896788": 1.686,
+    "tatoeba-12877235": 2.208
+  }
+}

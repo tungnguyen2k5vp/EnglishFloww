@@ -1,0 +1,16 @@
+{
+  "model": "onnx-community/wav2vec2-lv-60-espeak-cv-ft-ONNX",
+  "revision": "c69750f5043e5e1f8a71ab95dd3b98338c280c92",
+  "sha256": "f020386a4f730675b59f833af1581c7a0fa2f1e1c48adcf526e5c3c96115f772",
+  "bytes": 241691639,
+  "license": "Apache-2.0",
+  "baseModel": "facebook/wav2vec2-lv-60-espeak-cv-ft",
+  "lexicon": "cmusphinx/cmudict",
+  "lexiconRevision": "74790861f652b15e4ac49015a90074ad62a27690",
+  "lexiconLicense": "BSD-2-Clause",
+  "lexiconSha256": "89ab6ed578233691391501bdc288227e6588330c321186420f37ddde794b5190",
+  "lexiconChanges": "Selected alphabetic headwords; first pronunciation; stress stripped; ARPAbet converted to model IPA token IDs.",
+  "headwords": 124082,
+  "sampleRate": 16000,
+  "method": "Quantized phoneme CTC acoustic posteriors, forced alignment and posterior practice index. Not human-calibrated, accent-neutral, prosody or examination scoring."
+}

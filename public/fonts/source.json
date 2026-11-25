@@ -1,0 +1,16 @@
+{
+  "source": "https://github.com/google/fonts/tree/0b58fb370093f9a9f4ff785d94405710b79de67c/ofl/intertight",
+  "license": "SIL Open Font License 1.1",
+  "files": [
+    {
+      "name": "InterTight.ttf",
+      "sha256": "b81b73dcb64df3c230cabade7df6c5773bf863233f24c9ee51087519f1f88b6f",
+      "bytes": 581588
+    },
+    {
+      "name": "OFL.txt",
+      "sha256": "50240ab035cf1b6b3307940235481d515c4b6de3ab1fa843dbe59e7892cb9d58",
+      "bytes": 4383
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "browser": {
+    "mode": "launch",
+    "executable_path": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "headless": true
+  },
+  "start_url": { "url": "http://127.0.0.1:5178/#dictionary" },
+  "environment": {
+    "viewport": { "width": 1280, "height": 900 },
+    "locale": "vi-VN",
+    "timezone": "Asia/Bangkok"
+  },
+  "actions": [
+    {
+      "step_id": "dictionary_ready",
+      "action": "wait_for",
+      "locator": { "kind": "css", "selector": ".dictionary-results" },
+      "state": "visible",
+      "timeout_ms": 15000
+    },
+    {
+      "step_id": "search_habit",
+      "action": "fill",
+      "locator": { "kind": "role", "role": "textbox", "name": "Tìm từ điển" },
+      "value": { "source": "literal", "value": "habit" }
+    },
+    {
+      "step_id": "open_entry",
+      "action": "click",
+      "locator": { "kind": "css", "selector": ".dictionary-result" }
+    },
+    {
+      "step_id": "save_word",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": ".dictionary-entry > button.full"
+      }
+    },
+    {
+      "step_id": "open_saved",
+      "action": "click",
+      "locator": { "kind": "css", "selector": ".sidebar a[href='#vocabulary']" }
+    },
+    {
+      "step_id": "saved_word_visible",
+      "action": "wait_for",
+      "locator": { "kind": "css", "selector": ".word-name" },
+      "state": "visible",
+      "timeout_ms": 10000
+    }
+  ],
+  "capture": {
+    "after_each_step": ["url"],
+    "at_end": ["dom", "accessibility", "url", "storage"],
+    "events": ["page-errors"]
+  },
+  "command_timeout_ms": 60000
+}

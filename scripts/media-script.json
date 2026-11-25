@@ -1,0 +1,83 @@
+[
+  {
+    "name": "morning",
+    "segments": [
+      {
+        "start": 0,
+        "end": 8,
+        "en": "Every morning, I take a break before I check my phone.",
+        "vi": "Mỗi sáng, tôi nghỉ ngơi một chút trước khi kiểm tra điện thoại."
+      },
+      {
+        "start": 8,
+        "end": 16,
+        "en": "I open a book and discover a new word. This small habit helps me focus.",
+        "vi": "Tôi mở sách và khám phá một từ mới. Thói quen nhỏ giúp tôi tập trung."
+      },
+      {
+        "start": 16,
+        "end": 24,
+        "en": "My schedule is busy, but five minutes of practice can make a difference.",
+        "vi": "Lịch trình của tôi bận rộn nhưng năm phút luyện tập có thể tạo khác biệt."
+      },
+      {
+        "start": 24,
+        "end": 32,
+        "en": "I feel more confident every day. You can give it a try, too.",
+        "vi": "Tôi cảm thấy tự tin hơn mỗi ngày. Bạn cũng có thể thử."
+      }
+    ]
+  },
+  {
+    "name": "garden",
+    "segments": [
+      {
+        "start": 0,
+        "end": 8,
+        "en": "Our community has a garden between two buildings. Everyone is welcome.",
+        "vi": "Cộng đồng có một khu vườn giữa hai tòa nhà. Ai cũng được chào đón."
+      },
+      {
+        "start": 8,
+        "end": 16,
+        "en": "We collaborate to grow vegetables and reduce waste. It is a sustainable project.",
+        "vi": "Chúng tôi hợp tác trồng rau và giảm rác. Đây là dự án bền vững."
+      },
+      {
+        "start": 16,
+        "end": 24,
+        "en": "Children discover how plants grow. Neighbors share tools and helpful feedback.",
+        "vi": "Trẻ em khám phá cách cây lớn lên. Hàng xóm chia sẻ dụng cụ và phản hồi hữu ích."
+      },
+      {
+        "start": 24,
+        "end": 32,
+        "en": "The garden is an opportunity to learn, take a break, and make progress together.",
+        "vi": "Khu vườn là cơ hội để học, nghỉ ngơi và cùng nhau tiến bộ."
+      }
+    ]
+  },
+  {
+    "name": "travel",
+    "segments": [
+      {
+        "start": 0,
+        "end": 8,
+        "en": "Our destination is a quiet village. The train is reliable and affordable.",
+        "vi": "Điểm đến là một ngôi làng yên tĩnh. Tàu đáng tin cậy và giá phải chăng."
+      },
+      {
+        "start": 8,
+        "end": 16,
+        "en": "I have a reservation at a small guesthouse. We can borrow a map there.",
+        "vi": "Tôi đã đặt chỗ ở nhà nghỉ nhỏ. Ta có thể mượn bản đồ ở đó."
+      },
+      {
+        "start": 16,
+        "end": 24,
+        "en": "I prefer a slow journey. It gives me an opportunity to discover something new.",
+        "vi": "Tôi thích hành trình chậm rãi hơn. Nó cho tôi cơ hội khám phá điều mới."
+      }
+    ]
+  }
+]

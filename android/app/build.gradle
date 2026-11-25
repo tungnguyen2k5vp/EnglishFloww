@@ -1,0 +1,14 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.englishflow.mobile'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'com.englishflow.mobile'
+        minSdk 28
+        targetSdk 36
+        versionCode 8
+        versionName '1.7.0'
+    }
+    sourceSets.main.assets.srcDirs = ['../../dist', 'src/main/assets']
+}
+dependencies { implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.23.2' }

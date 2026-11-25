@@ -1,0 +1,142 @@
+{
+  "version": "1.7.0",
+  "versionCode": 8,
+  "package": "com.englishflow.mobile",
+  "date": "2026-10-25",
+  "apk": "EnglishFlow-Android-1.7.0.apk",
+  "bytes": 307775657,
+  "sha256": "b7da9d04c65331f9e42583af63dd0302ed635a6261a28f18583ec26e62755dae",
+  "installed_apk_sha256": "b7da9d04c65331f9e42583af63dd0302ed635a6261a28f18583ec26e62755dae",
+  "signature": {
+    "verified": true,
+    "scheme": "APK v2",
+    "certificate": "Android Debug",
+    "certificate_sha256": "c51108cf416db257d4510115d7c888146b36672e12815fbd6230e60125f1a02b",
+    "store_release_signed": false
+  },
+  "device": {
+    "serial": "emulator-5556",
+    "api": "36",
+    "os": "16",
+    "model": "sdk_gphone64_x86_64",
+    "abi": "x86_64",
+    "pixels": "Physical size: 1080x1920",
+    "density": "Physical density: 420",
+    "viewport": {
+      "width": 412,
+      "height": 684,
+      "dpr": 2.625
+    },
+    "graphics": "swangle for final native smoke and preview; swiftshader for acoustic regression"
+  },
+  "physical_tested_this_release": false,
+  "content": {
+    "library_packs": 30,
+    "curated_words": 360,
+    "bilingual_sentences": 226,
+    "human_recordings": 35,
+    "readings_total": 22,
+    "media_total": 38,
+    "grammar_lessons": 60,
+    "writing_prompts": 20,
+    "speaking_scenarios": 18,
+    "attributions": 151,
+    "dictionary_headwords": 104703,
+    "dictionary_senses": 175735,
+    "spelling_headwords": 84921
+  },
+  "assessment_model": {
+    "model": "onnx-community/wav2vec2-lv-60-espeak-cv-ft-ONNX",
+    "revision": "c69750f5043e5e1f8a71ab95dd3b98338c280c92",
+    "sha256": "f020386a4f730675b59f833af1581c7a0fa2f1e1c48adcf526e5c3c96115f772",
+    "bytes": 241691639,
+    "license": "Apache-2.0",
+    "baseModel": "facebook/wav2vec2-lv-60-espeak-cv-ft",
+    "lexicon": "cmusphinx/cmudict",
+    "lexiconRevision": "74790861f652b15e4ac49015a90074ad62a27690",
+    "lexiconLicense": "BSD-2-Clause",
+    "lexiconSha256": "89ab6ed578233691391501bdc288227e6588330c321186420f37ddde794b5190",
+    "lexiconChanges": "Selected alphabetic headwords; first pronunciation; stress stripped; ARPAbet converted to model IPA token IDs.",
+    "headwords": 124082,
+    "sampleRate": 16000,
+    "method": "Quantized phoneme CTC acoustic posteriors, forced alignment and posterior practice index. Not human-calibrated, accent-neutral, prosody or examination scoring."
+  },
+  "passed_groups": {
+    "assertion_suites": 6,
+    "assessment_browser": 4,
+    "assessment_emulator": 5,
+    "learning_browser": 7,
+    "learning_emulator": 7,
+    "mobile_browser": 14,
+    "vocabulary_browser": 8,
+    "dictionary_browser": 6,
+    "collection_editor_browser": 6,
+    "collection_editor_emulator": 6,
+    "native_android": 10,
+    "desktop_workflows": 19,
+    "reliability": 5
+  },
+  "assessment_evidence": {
+    "build": "1.7.0 (8)",
+    "serial": "emulator-5556",
+    "checks": [
+      "Local Writing grade, exact suggestion application, invalidation and regrading survive reload/process death without changing SRS",
+      "Expanded Writing/audio/sentence/pack libraries and level filters work; adding a pack keeps review schedules",
+      "New original bilingual reading opens with all paragraphs, translation and comprehension quiz",
+      "Actual ONNX phoneme inference runs offline on verified human audio; matching reference scores above mismatched reference",
+      "Silence creates no score; cancellation, audio interruption, retry and background clear pending feedback"
+    ],
+    "measurements": {
+      "correctSeconds": 4.923,
+      "correct": 56,
+      "mismatch": 9
+    },
+    "errors": [],
+    "passed": true
+  },
+  "upgrade": {
+    "from": "1.6.0 (7)",
+    "to": "1.7.0 (8)",
+    "preferencesByteIdentical": true,
+    "customWordsSchedulesWritingPreserved": true
+  },
+  "package_audit": {
+    "model_hash": true,
+    "lexicon_hash": true,
+    "licenses_match": true,
+    "licensed_MP3s": 35,
+    "legacy_reference_assets": false,
+    "internet_permission": false,
+    "native_abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+    ]
+  },
+  "evidence": {
+    "assessment": "test-results/assessment/{browser,emulator}/results.json",
+    "upgrade": "test-results/assessment/upgrade-final/",
+    "preview": "test-results/assessment/release-preview/capture.json",
+    "native": "test-results/mobile/native/results.json",
+    "regression": "docs/TEST_RESULTS.md"
+  },
+  "scope": [
+    "All executed suites ran with the final application source/build; older collection/dictionary test result metadata may retain historical version labels. Final installation is attested by the installed-copy hash and independent upgrade capture.",
+    "Native acoustic inference used real, licensed recorded speech copied into the app private recording file and verified byte-for-byte; microphone capture/playback was exercised separately. No human calibration or pronunciation-quality accuracy claim.",
+    "The complete native smoke suite was rerun successfully with swangle after the earlier emulator graphics crash during video. Failed attempts are not counted as passes.",
+    "Writing uses local spelling and conservative grammar rules with four measurable criteria; semantic essay/task accuracy and IELTS bands are not evaluated."
+  ],
+  "not_tested": [
+    "Physical phone for 1.7.0",
+    "Human-rated pronunciation calibration/accent fairness",
+    "Prosody/stress grading",
+    "Semantic essay assessment",
+    "TalkBack",
+    "Rotation",
+    "Android API 28 runtime",
+    "ARM runtime",
+    "iOS"
+  ],
+  "preview": "Learning-preview-1.7.0.jpg"
+}

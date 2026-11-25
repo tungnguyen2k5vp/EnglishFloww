@@ -1,0 +1,14 @@
+// ponytail: a small offline word bank; add a licensed dictionary for open-ended play.
+export const chainWords = ("apple ant art air animal arm ask answer age airport bag ball banana bank bed bee bird book box boy bread bridge bus baby beach blue boat bottle brother cake camera car card cat chair change child city class clock cloud coffee cold color come cook country cup dance day desk dog door dream drink duck ear earth east eat egg eight elephant end energy enjoy evening eye face family fan farm fast father feel find fire fish floor flower fly food foot forest four friend frog fruit fun game garden girl give glass go gold good grape grass green ground grow hair hand happy hat head hear heart help here hill home honey horse hot house ice idea island jacket jar job juice jump keep key kind king kite kitchen lake lamp land last late leaf learn left leg lemon letter life light like line lion listen little live long look love lunch make man map market milk mind minute money monkey month moon morning mother mountain mouse mouth move music name nature near need nest net new news nice night nine nose note ocean office old one open orange owl page paint paper park part party pen pencil people person phone photo piano pig place plane plant plate play point pool potato price question queen quick quiet rabbit rain read red rice ride right ring river road rock room rose run sad salt same sand school sea seat second seed see seven shape sheep shoe shop short show sing sister sit six sky sleep small smile snow soap sock song sound south space speak spoon spring star start stay step stone stop story street strong student study summer sun sweet table take talk tea teach team ten test thank thing think three tiger time today tomato top town train tree trip try turn two under unit use usual valley vegetable very video village voice walk wall want warm water watch wave way week well west whale white wind window winter wish woman wood word work world write year yellow yes young zebra zero").split(" ");
+
+export function chainTurn(history: string[], input: string, bank = chainWords, withBot = true): { history: string[]; error?: string; won?: boolean } {
+  const word = input.trim().toLowerCase();
+  const previous = history.at(-1);
+  if (!/^[a-z]{2,30}$/.test(word) || !bank.includes(word)) return { history, error: "Từ chưa có trong bộ từ ngoại tuyến. Hãy chọn từ khác hoặc dùng gợi ý." };
+  if (history.includes(word)) return { history, error: "Từ này đã được dùng." };
+  if (previous && word[0] !== previous.at(-1)) return { history, error: `Từ phải bắt đầu bằng chữ ${previous.at(-1)!.toUpperCase()}.` };
+  const next = [...history, word];
+  const reply = bank.find(w => w[0] === word.at(-1) && !next.includes(w));
+  if (!withBot) return { history: next, won: !reply };
+  return reply ? { history: [...next, reply] } : { history: next, won: true };
+}

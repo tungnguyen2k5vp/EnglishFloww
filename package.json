@@ -1,0 +1,38 @@
+{
+  "name": "englishflow",
+  "version": "1.7.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5178 --strictPort",
+    "build": "tsc --noEmit && vite build && node scripts/build-sw.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 4178",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types tests/domain.test.ts && node --experimental-strip-types tests/word-chain.test.ts && node --experimental-strip-types tests/vocabulary-study.test.ts && node --experimental-strip-types tests/dictionary.test.ts && node --experimental-strip-types tests/learning.test.ts && node --experimental-strip-types tests/assessment.test.ts",
+    "test:e2e": "node scripts/e2e.mjs",
+    "test:reliability": "node scripts/reliability.mjs",
+    "test:mobile": "node --experimental-strip-types scripts/mobile-e2e.mjs",
+    "test:android": "node scripts/android-smoke.mjs",
+    "test:physical": "node scripts/physical-smoke.mjs",
+    "build:android": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-android.ps1",
+    "test:vocabulary": "node --experimental-strip-types scripts/vocabulary-e2e.mjs",
+    "test:dictionary": "node --experimental-strip-types scripts/dictionary-e2e.mjs",
+    "test:collection-editor": "node --experimental-strip-types scripts/collection-editor-e2e.mjs",
+    "test:physical:vocabulary": "node scripts/physical-vocabulary.mjs",
+    "test:learning": "node --experimental-strip-types scripts/learning-e2e.mjs",
+    "test:assessment": "node --experimental-strip-types scripts/assessment-e2e.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "@playwright/test": "^1.58.0"
+  }
+}

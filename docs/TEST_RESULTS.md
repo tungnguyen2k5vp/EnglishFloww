@@ -1,0 +1,143 @@
+# Verification
+
+## Local assessment and expanded library — 1.7.0 (8), 2026-10-25
+
+[APK](../releases/EnglishFlow-Android-1.7.0.apk): **307,775,657 bytes**, SHA-256 `b7da9d04c65331f9e42583af63dd0302ed635a6261a28f18583ec26e62755dae`. APK v2 debug signature verifies; pulled installed copy has the identical hash. [Machine-readable verification](../releases/verification-1.7.0.json), [preview from installed Android WebView](../releases/Learning-preview-1.7.0.jpg).
+
+Current content: 30 topic packs / 360 edited words, 226 bilingual sentences, 35 human recordings, 22 readings, 38 audio/video lessons, 60 grammar lessons, 20 Writing prompts and 18 four-turn speaking scenarios. The dictionary remains 104,703 headwords / 175,735 senses. New content requires explicit Add and does not change existing review schedules. There are 151 attribution records; acoustic weights/lexicon have pinned revisions, SHA-256 and bundled licenses.
+
+| Executed check | Result | Evidence / scope |
+| --- | --- | --- |
+| `npm test` | 6 assertion suites pass | Existing domain, vocabulary, dictionary and content; Writing corrections/exact edit ranges, bounds, false-positive guards, repetition/length limits, runtime lexicon loader, native result and backup validation |
+| `npm run test:assessment` | 4 browser + 5 native groups pass | `test-results/assessment/{browser,emulator}/results.json`; apply suggestion, invalidate/regrade, reload/process death, new filters/reading, actual native inference, silence/cancel/interruption/retry/background |
+| `npm run test:learning` | 7 browser + 7 native groups pass | `test-results/learning/{browser,emulator}/results.json`; airplane mode, all 35 human clips, writing/submission/scenarios, source export, daily events, game, browser offline audio and Range 206/416 |
+| `npm run test:mobile` | 14 groups pass | All 60 grammar lessons, lower content/details, 40 routes at 320/393/600 px |
+| Vocabulary / dictionary | 8 / 6 browser groups pass | `test-results/vocabulary/results.json`, `test-results/dictionary/browser/results.json` |
+| Collection draft editor | 6 browser + 6 native groups pass | `test-results/collection-editor/{browser,emulator}/results.json`; actual keyboard, repeated Android Back, draft-only changes and final commit |
+| `npm run test:android` | All 10 native groups pass | `test-results/mobile/native/results.json`; permission denial, actual recording/playback/background cleanup, durable storage, document export/import, audio/video play and seek |
+| Desktop / reliability | 19 / 5 groups pass | `npm run test:e2e`, `npm run test:reliability`; expanded dictionary exact-term selector corrected |
+| Upgrade 1.6.0 → final 1.7.0 | Preferences identical before launch; custom words, schedules and Writing preserved after launch | `test-results/assessment/upgrade-final/{before,after}.xml`, `results.json` |
+| Build / archive / installation | Pass | TypeScript, Vite, service worker, Gradle, signature, installed-copy hash, native ABI inventory, 35 MP3s, model/lexicon/license hashes and no legacy reference assets or Internet permission |
+
+Acoustic evidence uses the licensed human recording `1285681.mp3` (Tatoeba sentence 13500944), copied into private recording storage and verified by hash before running the actual Android ONNX engine. The matching reference returned **56**, a mismatched train-station reference **9**, and silence returned an error without a score event. First scoring after process restart with cached model weights took **4.923 s** in this emulator run. These are functional tests, not human-rated accuracy or a pass/fail pronunciation threshold. Recording via the emulator microphone and actual playback were tested separately; physical microphone acoustics were not tested.
+
+Writing is automatic local rule feedback with a real 84,921-entry spelling lexicon. Tests exercise corrections, question/modal/subjunctive exceptions and valid “many water bottles / many time slots”. It does not assess argument correctness, full task coverage or IELTS bands. Phoneme feedback is an uncalibrated acoustic index using one US dictionary pronunciation; prosody, stress, accent fairness and free-answer meaning remain outside its scope. These limits are displayed in the app.
+
+Intermediate failures are not passes: the runtime loader initially rejected two legitimate long place names; the length bound was corrected and the loader itself is now tested. Binary fixture input through Windows/ADB stdin was truncated; fixtures now use push/private copy and mandatory SHA-256 comparison. A timed-study event invalidated a test's total-event assertion; it now checks pronunciation events specifically. The first native smoke run lost the emulator during video rendering; all ten groups passed on rerun with the swangle backend. Desktop tests now select exact “habit” because “habitat” is also in the expanded dictionary.
+
+Native scope: Android 16 / API 36, x86_64, 1080×1920, density 420, approximately **412×684 CSS px**; final preview has no system bars. Final app source/build was used by the listed suites. Older collection/dictionary scripts retain historical version labels in their result metadata; execution here is documented separately, with the final installed binary hash and independent upgrade evidence. Learner state was restored after the final preview/upgrade run.
+
+No physical phone, ARM runtime, TalkBack, rotation, API 28 runtime or iOS was tested for 1.7.0. APK is debug-signed. AI conversation generation, accounts/cloud and online multiplayer remain deferred as requested. The Vite shared chunk exceeds 500 kB; production build succeeds. Entries below are historical results.
+
+## Offline learning and reviewed open content — 1.6.0 (7), 2026-10-25
+
+- APK: [EnglishFlow-Android-1.6.0.apk](../releases/EnglishFlow-Android-1.6.0.apk), **18,915,468 bytes**, SHA-256 `c71f015f8eaab8e716fe501d45f331690e502589df28f52870c3a6e3f04a6f21`. APK v2 debug signature verifies. The installed APK pulled from `emulator-5556` has the same hash. Exact metadata and evidence paths: [verification-1.6.0.json](../releases/verification-1.6.0.json).
+- Added 10 topic packs / 120 words, 86 bilingual sentences, 15 separately licensed recordings and 6 bilingual readings, with 108 attribution records. The app has 40 original grammar lessons, 8 writing prompts, 6 four-turn speaking scenarios, daily tasks and source/manifest export. [Collection plan and source rules](OPEN_CONTENT_PLAN.md); [content manifest](../public/content/manifest.json).
+
+| Executed check | Result | Evidence / scope |
+| --- | --- | --- |
+| `npm test` | 5 assertion suites pass | Domain, Word Chain, vocabulary study, dictionary and learning/content validation |
+| `npm run test:learning` | 7 browser groups pass | `test-results/learning/browser/results.json`; actual service-worker offline reload/audio and Range 206/416 |
+| Learning on installed Android | 7 groups pass on final APK | `test-results/learning/emulator/results.json`; airplane mode on and Wi-Fi off; original connectivity restored |
+| `npm run test:mobile` | 14 groups pass | `test-results/mobile/browser-results.json`; 40 routes × 320/393/600 px |
+| Vocabulary / dictionary | 8 / 6 groups pass | `test-results/vocabulary/results.json`, `test-results/dictionary/browser/results.json` |
+| Collection draft editor | 6 browser + 6 emulator groups pass | `test-results/collection-editor/{browser,emulator}/results.json`; Android keyboard/Back and no navigation loop |
+| `npm run test:android` | 10 native groups pass before final CSS adjustment | `test-results/mobile/native/results.json`; persistence, Back, media seek, microphone denial/record/play/background cleanup, native export/import and video |
+| Desktop / reliability | 19 / 5 groups pass | `npm run test:e2e`, `npm run test:reliability` during this release cycle |
+| Upgrade 1.5.0 → 1.6.0 | Native preferences unchanged byte-for-byte before launch | `test-results/learning/upgrade/{before,after}.xml`; functional tests also preserve custom IDs, notes, schedules and existing collections |
+| Build and package | Pass | TypeScript, Vite, service worker, Gradle, APK signature, installed-copy hash; 15 licensed content MP3s and no `assets/reference/` in APK |
+
+The full native smoke pass preceded one final CSS-only rule hiding the floating dictionary on plan, sources and speaking. The seven focused native learning groups and the release screenshots were run after the final build/install. Other listed suites passed during the release cycle; their result files do not individually attest the final APK hash. Older scripts retain historical version labels in some output; execution here is recorded separately rather than rewriting that history.
+
+Intermediate failures led to actual fixes: offline media seeking now handles Range requests; microphone denial remains visible; an active recording uses private files rather than evictable cache storage after the emulator storage monitor removed a cached clip. Native assertions read canonical SharedPreferences rather than a stale localStorage copy. Obsolete grammar/game selectors and one test declaration order were corrected. Only successful reruns are counted above.
+
+[Preview](../releases/Learning-preview-1.6.0.jpg) uses six clean viewport captures from the final installed Android WebView, without system bars. Originals and capture metadata are in `test-results/learning/release-preview/`; canonical learner state was restored and compared after capture. Emulator: Android 16 / API 36, x86_64, 1080×2400, density 420, approximately 411×866 CSS px. Test-created drafts, collections and progress were restored after regression runs.
+
+No physical phone was connected for this release. Physical microphone/acoustic TTS, TalkBack, rotation, API 28 runtime and iOS were not tested. The APK uses debug signing. Offline learning is the selected scope; AI conversation, account/cloud sync and online multiplayer are not configured. Guided speaking uses authored scenarios and recording; writing uses saved drafts and format/self-checks, without automated IELTS band scoring. Earlier release results below remain historical evidence.
+
+## Draft vocabulary and Back — 1.5.0 (6), 2026-10-24
+
+- APK: `releases/EnglishFlow-Android-1.5.0.apk`; exact size/hash, signature and installed-copy verification in `releases/verification-1.5.0.json`.
+- Six focused groups pass in Chrome and on the installed Android 16 / API 36 x86_64 emulator (`emulator-5556`, 1080×2400, density 420, font scale 1.0). Actual Android Back and keyboard open/dismiss were exercised. No uncaught page errors. `test-results/collection-editor/{browser,emulator}/results.json`.
+- Verified lookup/edit/cancel/delete/restore/reload only affect draft vocabulary; required meanings, duplicate terms, stale raw text and all-deleted guards; edited fields and kept membership persist only after the final Add; existing collections/schedules remain unchanged. Create and append skip the completed form on Back.
+- Repeated collection → learning setup → Back → detail → Back → library; picker/settings local Back; active session exit/cancel/resume; results return; reloaded deep-link fallback; Home hardware Back exits and relaunch opens Home. Native Home no longer reopens stale WebView history.
+- `npm test` (four assertion suites), six dictionary groups, eight vocabulary groups and fourteen mobile groups pass. Mobile checks include reading/grammar scroll restoration and 32 routes at three widths. TypeScript/Vite/Gradle pass. APK v2 debug signature verifies; installed APK pulled back and SHA-256 matches.
+- Failed intermediate checks are not passes: an unknown prefix exposed SPA HTML fallback (fixed using dictionary inventory); a dedup selector and folder-card ambiguity were corrected in the test; post-install startup now waits for the running WebView before attaching. A visual check also caught the floating dictionary overlapping draft actions; it is hidden on these forms.
+- Preview assembled from emulator screenshots, with system bars cropped: `releases/Vocabulary-draft-preview-1.5.0.jpg`. Phone testing is deferred per user preference. TalkBack, rotation, API 28 and acoustic TTS were not tested in this update. The original 4English package and reference app were untouched; test learner data/drafts were restored.
+
+## Automatic dictionary — 1.4.0 (5), 2026-10-23
+
+- Final APK: `releases/EnglishFlow-Android-1.4.0.apk`, **19,593,866 bytes**, SHA-256 `18048864cf066e2181241171c3b59cce7dfba27097ef4863f062bc4c8ac7f093`. APK v2 / Android Debug signature verified; the installed realme RMX3085 APK hash matches exactly.
+- Real source assertions pass: five user words, all senses/IPA/examples, case/phrase normalization, POS-aware forms, safe object keys, 100-item bound, interrupted/corrupt shard retry, backup and strict spelling.
+- Six dedicated dictionary workflow groups pass on browser and physical Android: five words auto-resolve, alternate sense/draft restore, UK/US, learning/cold restart, due review with exactly-once commits, dictionary search and 100 distinct source words. Native engine start events observed for both accents. Final physical bulk timing: **1,403 ms**. `test-results/dictionary/{browser,physical}/results.json`.
+- On the final build: 8 vocabulary browser groups, 14 mobile browser groups (32 routes × 3 widths), 5 reliability groups, 5 focused physical vocabulary groups and 11 general physical groups pass with no uncaught page errors. Shared desktop 19 workflow groups also passed during this update.
+- TypeScript/Vite/Gradle pass. Only test-owned collections/words/review events are removed; previous vocabulary settings/session are restored. No modification to the original 4English package or reference project.
+- Test-only corrections: first browser launch has no persisted state yet, and native cold start initially opens Home, so the dedicated test now uses the initial state and re-enters the saved learning route. Failed intermediate attempts are not counted as passes. An initial desktop invocation used the wrong port; the rerun against 4178 passed all 19 groups.
+- [Data/provenance/runtime boundaries](DICTIONARY_INTEGRATION.md). Acoustic pronunciation quality, TalkBack, rotation, API 28 and iOS remain unverified.
+
+## Vocabulary core — 1.3.0 (4), 2026-10-23
+
+- Final APK: `releases/EnglishFlow-Android-1.3.0.apk`, **8,232,873 bytes**, SHA-256 `ed904cc4e58e4f8de882ace54a6b91c9a50bb2b3c57a5ca776362b72557405ad`. APK v2 / Android Debug signature verified. Installed on realme RMX3085 / Android 13; installed APK pulled back and hash matched exactly. Original package/account/data were not modified.
+- 8 vocabulary browser groups passed: global fresh learning, Add/create/100-word/dedup/manual resolution, per-group settings, selector actions, all six stages, wrong retries, normalized typing, feedback visibility above the fixed footer, reload during typed/checked states, once-only scheduling, result/flashcard controls, due/exit/skip, import validation and seven routes at three widths. `test-results/vocabulary/results.json`.
+- 5 focused physical groups passed on the final APK: actual keyboard and creation; lower settings/selector/first writing; immediate force-stop with checked feedback recovery; all four core quiz families/retry/results/two-hour scheduling; flashcards and due-review exit/resume/skip. Test-owned collection/word/events were removed afterward. `test-results/vocabulary/physical/results.json`.
+- 14 mobile browser groups / 32 routes × three widths passed on the final build. Eleven general physical regression groups passed immediately before the final study-only feedback-scroll adjustment; the five focused physical groups were rerun after it. Existing reading/audio/grammar/keyboard/Back flows remain working. No uncaught page errors in these suites. Shared desktop 19 workflow groups and reliability five groups passed during this update.
+- Domain assertions cover intervals at the ceiling, failure downgrade, failed fresh words remaining unlearned, stale/double actions, resume/backup validation, word scoping/global originating collection, five-error termination and exactly-once commit. TypeScript/Vite/Gradle passed.
+- A failed intermediate physical run exposed WebView's delayed disk flush. Native `SharedPreferences.commit()` now completes before UI publication; the same force-stop scenario passed on the rebuilt final APK. An old flashcard test selector was also updated for the new flip-card UI. Failed runs are not counted as passes.
+- Preview: `releases/Vocabulary-preview-1.3.0.jpg` (owned app only, system bars cropped). Evidence/known differences: [VOCABULARY_ANALYSIS.md](VOCABULARY_ANALYSIS.md). Original cloud/share-code/dictionary-image parity, acoustic TTS, TalkBack, rotation and API 28 remain unverified or unavailable. No current emulator or full-fidelity claim.
+
+
+## Full-scroll/detail release — 1.2.0 (3), 2026-10-22
+
+- Final APK: `releases/EnglishFlow-Android-1.2.0.apk`, **8,217,794 bytes**, SHA-256 `0028b15ca6ae427e5809dceb674a7143999d6a982da5669473b8a1378ba105f5`. APK Signature Scheme v2 verified, Android Debug certificate. Installed alongside original on realme RMX3085 / Android 13 and the disposable API 36 emulator. No changes to original app storage, permissions or account.
+- Strict TypeScript, Vite/Gradle build and domain/Word Chain assertions passed. The extraction script's malicious-HTML assertion passed; all 55 sanitized grammar lessons contain substantial content (shortest HTML: 5,281 characters).
+- **15 phone browser groups passed**: full-scroll home/Explore, real detail destinations, folder create/rename and dictionary save into the originating folder, review persistence, flip-through completion, catalog filtering, all ten grammar categories/all 55 lessons, lower-list scroll restoration, floating dictionary modal, Easy/Hard exercise/scoring/retry, three full books and saved position, reader settings/lookup/comprehension, actual audio seek/rate/loop, tutor scenario/shadowing and late mic cleanup, IELTS preview/fallback, profile/theme and Word Chain. **29 route variants × 320/393/600 px** passed overflow checks. No uncaught browser errors. `test-results/mobile/browser-results.json`.
+- **11 physical groups passed** on final APK: original six core groups plus lower home/detail Back/scroll/dictionary; final grammar group/lesson and lower scroll; catalog/lower pack cards/options-sheet Back/flashcard; exercise difficulty, actual Android soft keyboard and fixed audio player; lower Explore/bookshelf and incremented saved book page. CSS viewport 360×719, DPR 3, density 480, font scale 1.0. Audio playback tests were muted. No uncaught page errors. `test-results/mobile/physical/results.json` and PNGs.
+- **10 emulator native groups passed** on final APK: process persistence/Back; bundled audio/video playback, seek and speed; microphone denial/recording/playback/background cleanup; valid native UTF-8 file export; invalid file-picker restore preserving saved data. `test-results/mobile/native/results.json`.
+- Shared desktop **19 workflow groups** and **5 reliability groups** passed after the shared dictionary optional-context change. These cover offline shell, storage quota/corruption protection, backup validation/confirmation, quiz/SRS, media and keyboard dialog behavior.
+- Intermediate checks exposed test assumptions about existing book position and CDP fill opening the Android keyboard; the physical test now preserves existing progress and explicitly verifies keyboard visibility. Native file export verification polls for completion rather than assuming a 500 ms write. A scroll assertion now compares position at the actual click because Playwright can scroll a target before clicking. Dictionary results previously rendered below the phone list; they now open immediately in a modal. No failed intermediate run is counted as a pass.
+- Owned-app preview: `releases/Android-preview-1.2.0.jpg`, cropped to exclude system bars. Reference coverage/data boundaries: [SCREEN_LEDGER.md](SCREEN_LEDGER.md), 29 REA records in `evidence/deep-screen-index.json`.
+- Still untested: physical microphone/acoustic TTS, physical native file picker, TalkBack, rotation, API 28 and iOS. No claim of full visual equivalence or original backend/AI/online-content integration.
+
+
+## Physical update — 1.1.0 (2), 2026-10-22
+
+- APK: `releases/EnglishFlow-Android-1.1.0.apk`, 5,886,679 bytes, SHA-256 `5bf2080046476951b56013b6ef556de84c07f8d8485a25f1d75a071ce30952d7`. Android Debug signature verified. Installed on physical realme RMX3085 / Android 13 (API 33), arm64, density 480, font scale 1.0, Vietnamese UI, CSS viewport 360×719 at DPR 3. Device network/locale and original app permissions were not changed.
+- `npm test`: domain and Word Chain assertions passed; normalization, lexicon, matching, repeats, bot response and exhausted-bank win. TypeScript/Vite/Gradle build passed.
+- `npm run test:mobile`: nine groups passed, including tutor → Shadowing and offline Word Chain; ten routes at three widths. Results: `test-results/mobile/browser-results.json`.
+- `npm run test:android`: ten native groups passed on final APK / disposable API 36 emulator: persistence/Back, audio/video seeking/speed, mic denial/record/play/background cleanup, export/import validation. First run found an outdated test looking for the profile control outside Home; corrected navigation and the full rerun passed.
+- `ANDROID_TEST_SERIAL=<physical serial> npm run test:physical`: six groups passed: home/five tabs/artwork, dictionary/save/Back/vocabulary counts, Word Chain, Shadowing next sentence/hardware Back, muted audio decoding/play clock/seek, six routes without overflow and force-stop/restart persistence. No uncaught page errors. Results/screenshots: `test-results/mobile/physical/`. Script targets only `com.englishflow.mobile`, preserves data and permissions; creates one saved test word.
+- Physical mic/permission flow, acoustic TTS quality, picker, rotation, TalkBack and API 28 remain untested on real hardware. Emulator results do not establish these physical behaviors. Unchanged desktop suites were not rerun for this mobile-only update.
+- REA observed original directly on phone; `docs/evidence/physical-reference-index.json` records observations and fidelity gaps.
+
+## Earlier Android/mobile addition — 1.0.0, 2026-10-22
+
+- `npm run build`, `npm test`: passed after adding the phone entry and native media adapter.
+- `npm run test:mobile`: 9 groups passed against production preview: five tabs, dictionary/save/restart, real SM-2 counters, collections, bilingual reading/lookup, speaking sentence navigation, cleanup after late microphone permission, game routing and ten routes at 320/393/600 px without horizontal overflow. Screenshots/results: `test-results/mobile/`.
+- `npm run test:e2e`: all 19 existing web workflow groups passed again in Chrome. `npm run test:reliability`: all 5 reliability groups passed again. Earlier Edge checks were on the web prototype; the new Android shell was not tested in Edge.
+- Gradle `assembleDebug`: passed using Gradle 8.9, AGP 8.5.0, JDK 19 and SDK 36. `adb install -r`: passed on a disposable x86_64 Android API 36 emulator (Pixel 2 configuration, 1080×1920 / 420 dpi, phone viewport 412×684 CSS px after system-bar insets).
+- Native checks executed: process restart preserved vocabulary; Android Back dismissed the lookup and returned from a speaking lesson; bundled audio/video played and sought; video speed changed; microphone denial showed a fallback; granting permission allowed a real AAC recording and playback; backgrounding stopped recording. A prior run retained a 15,823-byte sample recording from the emulator microphone, not a human pronunciation assessment.
+- The final `npm run test:android` pass completed **10 native groups** on the actual delivered APK, including a real UTF-8 document export and file-picker import. Importing an invalid backup showed validation feedback and retained the saved word. Results/screenshots: `test-results/mobile/native/results.json` and sibling PNGs. The recording is emulator input; physical microphone quality remains untested.
+- Native media testing exposed unreliable seeking from intercepted HTTPS streams. The app now loads its small bundled media into Blob URLs; playback and seeking were then verified on Android. The emulator process exited during intermediate video retests; Windows recorded `qemu-system-x86_64-headless.exe` access violations (`0xc0000005`), and an earlier emulator log reported `bad color buffer handle`. The final pass uses `-gpu host -feature -Vulkan` and completed video playback/seek/speed checks. The failed host runs are not counted as app passes.
+- Artifact: `releases/EnglishFlow-Android-1.0.0.apk`, 5,478,183 bytes, SHA-256 `a31bf2db31d5cc972056eaaaf1046735870e8e2f4902b9711132f4aabccce254`. `apksigner verify` passed; certificate is Android Debug. Rebuilding may change the digest.
+
+Not executed: physical phone, Android API 28 compatibility run, iOS, TalkBack, Bluetooth/noisy-room audio, acoustic scoring, store release signing, or runtime equivalence to the original app's authenticated screens. Original 4English's Play installer redirect is documented separately in `REFERENCE_ANALYSIS.md`.
+
+Run date: 2026-10-22. Environment: Windows, Node 24.11.1, npm 11.6.2, installed Chrome and Microsoft Edge. No existing EnglishFlow tests were present before implementation. Existing unrelated apps were not modified or regression-tested.
+
+## Executed checks
+
+- `npm run typecheck`: strict TypeScript with unused-local/parameter checks.
+- `npm test`: runnable Node assertions covering SM-2 first/second/later intervals, failure timing, ease floor, normalization, real statistics/streaks, backup validation, invalid/custom vocabulary IDs, content relationships, answer/explanation data and contiguous subtitle timings.
+- `npm run build`: TypeScript + production Vite build + offline service-worker generation.
+- `npm run test:e2e`: 19 workflow groups passed on both Chrome and Edge against the production preview at port 4178, including initial navigation, dictionary/save/reload, collection create/edit/member add/remove, SM-2 persistence, reading lookup/translations/bookmark/position, score/explanations/mistakes, grammar, gap/typed/spelling, actual audio seek/rate/replay/dictation, actual video/synchronized transcript, empty/clear states, preferences, backup download/invalid import protection, real history, mobile navigation and uncaught-error check.
+- Responsive checks visit nine routes at 360, 390, 768 and 1440px, asserting no document horizontal overflow. Screenshots are written to `test-results/` (generated artifacts, ignored by Git).
+- `npm run test:reliability` against production preview: offline reload and reading library; quota failure preserving storage/UI; corrupted-storage retention/reset; modal/menu keyboard focus and Escape; valid backup confirmation/restore, theme persistence and explicit deletion resetting both stored profile and form.
+- REA `capture-browser-scenario`: genuine local dictionary→save→vocabulary Evidence retained in [REFERENCE_ANALYSIS.md](REFERENCE_ANALYSIS.md).
+
+The first browser run found a test locator issue; later navigation testing identified grammar route state that could not be re-opened reliably. Grammar now uses deep links. A 768px overflow was fixed by using compact navigation at tablet widths. The offline test found a static-cache Vary/Origin mismatch; owned asset lookup now ignores Vary. All of these were rerun after fixes. No failed check is represented as passing before rerun.
+
+## Scope of evidence
+
+Local browser-profile separation was checked; this does **not** test server authorization. No backend/database/AI/external API is configured. No database or protected-endpoint tests apply. There is no separate ESLint setup; strict `tsc` and the production compiler are the executed static checks. Speech synthesis availability varies by installed OS/browser voices and was not universally guaranteed by automation. Native player timing, finite local audio/video duration and transcript synchronization were actually exercised. No native device, assistive-technology certification, load benchmark or full WCAG conformance is claimed.
+
+Browser test base defaults to dev at port 5178; override `TEST_BASE_URL` for production at 4178. Reliability checks require production service worker and default to port 4178. Browser channel defaults to Chrome; `TEST_BROWSER=msedge` uses an installed Edge for workflow checks. All browser contexts created by these checks are disposable and closed.

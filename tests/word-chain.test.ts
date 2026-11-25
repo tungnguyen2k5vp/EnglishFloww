@@ -1,0 +1,11 @@
+import assert from "node:assert/strict";
+import { chainTurn, chainWords } from "../src/word-chain.ts";
+assert.equal(new Set(chainWords).size, chainWords.length);
+assert.deepEqual(chainTurn(["apple"], " EAR "), { history: ["apple", "ear", "rabbit"] });
+assert.ok(chainTurn(["apple"], "cat").error);
+assert.ok(chainTurn(["apple", "ear", "rabbit"], "ear").error);
+assert.ok(chainTurn(["apple"], "<script>").error);
+assert.ok(chainTurn(["apple"], "ezfake").error);
+assert.deepEqual(chainTurn(["cat"], "tree", ["cat", "tree"]), { history: ["cat", "tree"], won: true });
+assert.deepEqual(chainTurn([], "cat", ["cat", "tree"]), { history: ["cat", "tree"] });
+console.log("PASS: word chain normalization, dictionary validation, matching, repeats, bot turn and win.");
